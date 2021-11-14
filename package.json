@@ -1,14 +1,22 @@
 {
-  "name": "static-site",
+  "name": "npm",
   "version": "1.0.0",
-  "description": "",
+  "description": ":mag:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paperpatch/readme_generator.git"
   },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paperpatch/readme_generator/issues"
+  },
+  "homepage": "https://github.com/paperpatch/readme_generator#readme",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^8.2.0"
   }
 }
