@@ -1,48 +1,59 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
-const { renderLicenseBadge, renderLicenseLink, renderLicenseSection, generateMarkdown} = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const promptUser = () => {
   return inquirer.prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'What is your name? (Required)',
-      validate: nameInput => {
-        if (nameInput) {
+      name: 'title',
+      message: 'What is your project title? (Required)',
+      validate: titleInput => {
+        if (titleInput) {
           return true;
         } else {
-          console.log('Please enter your name!');
+          console.log('Please enter the name of your project!');
           return false;
         }
       }
     },
     {
       type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username (Required)',
-      validate: githubInput => {
-        if (githubInput) {
+      name: 'description',
+      message: 'Provide a description of the project (Required)',
+      validate: descriptionInput => {
+        if (descriptionInput) {
           return true;
         } else {
-          console.log('Please enter your GitHub username!');
+          console.log('You need to enter a project description!');
           return false;
         }
       }
     },
+    // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
     {
-      type: 'confirm',
-      name: 'confirmAbout',
-      message: 'Would you like to enter some information about yourself for an "About" section?',
-      default: true
+      type: 'input',
+      name: 'installation',
+      message: 'Provide a description of the project (Required)',
+      validate: installationInput => {
+        if (installationInput) {
+          return true;
+        } else {
+          console.log('You need to enter a project description!');
+          return false;
+        }
+      }
     },
+    // WHEN I choose a license for my application from a list of options
     {
       type: 'input',
       name: 'about',
       message: 'Provide some information about yourself:',
       when: ({ confirmAbout }) => confirmAbout
-    }
+    },
+    // WHEN I enter my GitHub username
+    // WHEN I enter my email address
   ])
 };
 
@@ -63,10 +74,6 @@ init()
   })
   .then(writeFileResponse => {
     console.log(writeFileResponse);
-    return copyFile();
-  })
-  .then(copyFileResponse => {
-    console.log(copyFileResponse);
   })
   .catch(err => {
     console.log(err);
