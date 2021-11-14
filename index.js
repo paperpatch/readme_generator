@@ -35,25 +35,50 @@ const promptUser = () => {
     {
       type: 'input',
       name: 'installation',
-      message: 'Provide a description of the project (Required)',
-      validate: installationInput => {
-        if (installationInput) {
+      message: 'Provide installation instructions for your project',
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Provide usage information for your project',
+    },
+    {
+      type: 'input',
+      name: 'contribution',
+      message: 'Provide contribution guidelines for your project',
+    },
+    {
+      type: 'input',
+      name: 'test',
+      message: 'Provide test information for your project',
+    },
+    // WHEN I choose a license for my application from a list of options
+    {
+      type: 'checkbox',
+      name: 'license',
+      message: 'Is there a license with this project? (Check all that apply)',
+      choices: ['MIT', 'Apache', 'GPL', 'BSD-2-Clause', 'BSD-3-Clause', 'BSD-4-Clause']
+    },
+    // WHEN I enter my GitHub username
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Please provide your GitHub username (Required)',
+      validate: githubInput => {
+        if (githubInput) {
           return true;
         } else {
-          console.log('You need to enter a project description!');
+          console.log('You need to enter your github username!');
           return false;
         }
       }
     },
-    // WHEN I choose a license for my application from a list of options
+    // WHEN I enter my email address
     {
       type: 'input',
-      name: 'about',
-      message: 'Provide some information about yourself:',
-      when: ({ confirmAbout }) => confirmAbout
+      name: 'email',
+      message: 'Please provide your email address',
     },
-    // WHEN I enter my GitHub username
-    // WHEN I enter my email address
   ])
 };
 
