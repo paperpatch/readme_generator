@@ -1,5 +1,5 @@
 # title
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)
 
   descript
 
@@ -12,33 +12,23 @@
   * [Questions](#questions)
 
   ## Installation
-  :floppy_disk:
 
-  j
+  yes
 
   ## Usage
 
-  :computer:
-
-  k
+  no
 
   ## Contributing
-
-  :memo:
-  :pencil:
 
   
 
   ## License
 
-  :receipt:	
-
-  undefined
+  IBM
 
   ## Questions
 
-  :envelope:
-
-  See my Github profile [yes](https://github.com/yes)
+  See my Github profile [username](https://github.com/username)
   
-  If you have any questions, please feel free to contact my email at no.
+  If you have any questions, please feel free to contact my email at email.

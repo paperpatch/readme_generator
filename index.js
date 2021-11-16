@@ -82,7 +82,7 @@ const init = () => {
       type: 'list',
       name: 'license',
       message: 'Choose a license with this project',
-      choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'IBM']
+      choices: ['MIT', 'Apache 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'BSD-2-Clause', 'BSD-3-Clause', 'IBM', 'Mozilla Public License 2.0', 'Boost Software License 1.0', 'The Unlicense']
     },
   ])
 };
