@@ -3,7 +3,7 @@
 
   ## Description
 
-  Project description goes here
+  Some Description...
 
   ## Table of Contents
 
@@ -11,25 +11,25 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Contributing](#contributing)
-  * Tests(#tests)
+  * [Tests](#tests)
   * [License](#license)
   * [Questions](#questions)
 
   ## Installation
 
-  Installation step 1:
+  steps
 
   ## Usage
 
-  A good example...
+  examples
 
   ## Contributing
 
-  Guideline!
+  contribution
 
   ## Tests
 
-  tests, test, and more tests.
+  tests
 
   ## License
 
