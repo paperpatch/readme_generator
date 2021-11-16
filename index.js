@@ -57,7 +57,7 @@ const promptProject = () => {
       type: 'checkbox',
       name: 'license',
       message: 'Is there a license with this project? (Check all that apply)',
-      choices: ['MIT', 'Apache', 'GPL', 'BSD-2-Clause', 'BSD-3-Clause', 'BSD-4-Clause']
+      choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'IBM']
     },
   ])
 };
@@ -70,8 +70,8 @@ const promptContact = readmeData => {
 `)
 
   // If there's no 'projects' array property, create one
-  if (!readmeData.projects) {
-    readmeData.projects = [];
+  if (!readmeData.contact) {
+    readmeData.contact = [];
   }
   return inquirer
     .prompt([
