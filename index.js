@@ -5,8 +5,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // Inquirer prompts
 const init = () => {
-  return inquirer.prompt([
-    {
+  return inquirer.prompt([{
       type: 'input',
       name: 'github',
       message: 'Please provide your GitHub username (Required)',
