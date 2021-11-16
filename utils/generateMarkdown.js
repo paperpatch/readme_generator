@@ -1,5 +1,7 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
+// TODO: Create a function that returns the license link
+// If there is no license, return an empty string
 function renderLicenseBadge(license) {
   console.log(license);
   for (let i=0; i<license.length; i++) {
@@ -22,18 +24,32 @@ function renderLicenseBadge(license) {
   };
 };
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
-function renderLicenseSection(license) {}
+function renderLicenseSection(datalicense) {
+  console.log(datalicense);
+  for (let i=0; i<datalicense.length; i++) {
+    switch (license) {
+      case '':
+        return '';
+      case 'MIT':
+        return `MIT License `
+      case 'Apache 2.0':
+        return `Apache 2.0 `
+      case 'GPL 3.0':
+        return `GPL 3.0 `
+      case 'BSD-2-Clause':
+        return `BSD-2-Clause `
+      case 'BSD-3-Clause':
+        return `BSD-3-Clause `
+      case 'IBM':
+        return `IBM `
+    };
+  };
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  // destructure page data by section
-
   return `# ${data.title}
   ${renderLicenseBadge(data.license)}
 
@@ -69,14 +85,15 @@ function generateMarkdown(data) {
 
   :receipt:	
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data)}
 
   ## Questions
 
   :envelope:
 
-  ${data.github}
-  ${data.email}
+  See my Github profile [${data.github}](https://github.com/${data.github})
+  
+  If you have any questions, please feel free to contact my email at ${data.email}.
 `;
 }
 
