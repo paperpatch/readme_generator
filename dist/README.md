@@ -1,9 +1,9 @@
 # Title
-  [![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description
 
-  Some Description...
+  Description
 
   ## Table of Contents
 
@@ -17,26 +17,26 @@
 
   ## Installation
 
-  steps
+  Installation steps
 
   ## Usage
 
-  examples
+  Examples
 
   ## Contributing
 
-  contribution
+  Guidelines
 
   ## Tests
 
-  tests
+  Tests
 
   ## License
 
-  BSD-2-Clause
+  MIT
 
   ## Questions
 
-  See my Github profile [username](https://github.com/username)
+  See my Github profile [Username](https://github.com/Username)
   
-  If you have any questions, please feel free to contact my email at email@gmail.com.
+  If you have any questions, please feel free to contact my email at Email@gmail.com.
