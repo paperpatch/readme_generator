@@ -4,7 +4,7 @@ const generateMarkdown = require('./utils/generateMarkdown');
 const writeToFile = require('./utils/filesystem')
 
 // TODO: Create an array of questions for user input
-const promptUser = () => {
+const promptProject = () => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -60,27 +60,43 @@ const promptUser = () => {
       message: 'Is there a license with this project? (Check all that apply)',
       choices: ['MIT', 'Apache', 'GPL', 'BSD-2-Clause', 'BSD-3-Clause', 'BSD-4-Clause']
     },
-    // WHEN I enter my GitHub username
-    {
-      type: 'input',
-      name: 'github',
-      message: 'Please provide your GitHub username (Required)',
-      validate: githubInput => {
-        if (githubInput) {
-          return true;
-        } else {
-          console.log('You need to enter your github username!');
-          return false;
-        }
-      }
-    },
-    // WHEN I enter my email address
-    {
-      type: 'input',
-      name: 'email',
-      message: 'Please provide your email address',
-    },
   ])
+};
+
+const promptContact = readmeData => {
+  console.log(`
+ =======================
+ Add Contact Information
+ =======================
+`)
+
+  // If there's no 'projects' array property, create one
+  if (!readmeData.projects) {
+    readmeData.projects = [];
+  }
+  return inquirer
+    .prompt([
+      // WHEN I enter my GitHub username
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Please provide your GitHub username (Required)',
+        validate: githubInput => {
+          if (githubInput) {
+            return true;
+          } else {
+            console.log('You need to enter your github username!');
+            return false;
+          }
+        }
+      },
+      // WHEN I enter my email address
+      {
+        type: 'input',
+        name: 'email',
+        message: 'Please provide your email address',
+      },
+    ]);
 };
 
 // TODO: Create a function to write README file
@@ -90,8 +106,8 @@ function writeToFile(fileName, data) {}
 function init() {}
 
 // Function call to initialize app
-init()
-  .then(promptUser)
+promptProject()
+  .then(promptContact)
   .then(readmeData => {
     return generateMarkdown(readmeData);
   })
