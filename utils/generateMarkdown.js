@@ -15,11 +15,10 @@ function generateMarkdown(data) {
   return `# ${data.title}
   :mag:
 
-  This is a node.js application powered by JavaScript that generates a website of github repositories and publishes to new html file.
+  ${data.description}
 
   ## Table of Contents
 
-  * [Installation](#installation)
   * [Features](#features)
   * [Setup](#setup)
   * [Usage](#usage)
