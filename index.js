@@ -1,10 +1,37 @@
-// TODO: Include packages needed for this application
+// External packages
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
-const promptProject = () => {
+// Inquirer prompts
+const init = () => {
   return inquirer.prompt([
+    {
+      type: 'input',
+      name: 'github',
+      message: 'Please provide your GitHub username (Required)',
+      validate: githubInput => {
+        if (githubInput) {
+          return true;
+        } else {
+          console.log('You need to enter your github username!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Please provide your email address (Required)',
+      validate: githubInput => {
+        if (githubInput) {
+          return true;
+        } else {
+          console.log('You need to enter your github username!');
+          return false;
+        }
+      }
+    },
     {
       type: 'input',
       name: 'title',
@@ -31,74 +58,35 @@ const promptProject = () => {
         }
       }
     },
-    // WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
     {
       type: 'input',
       name: 'installation',
-      message: 'Provide installation instructions for your project',
+      message: 'Provide the necessary installation steps required to install your project.',
     },
     {
       type: 'input',
       name: 'usage',
-      message: 'Provide usage information for your project',
+      message: 'Provide instructions and examples of your projects in use.',
     },
     {
       type: 'input',
       name: 'contribution',
-      message: 'Provide contribution guidelines for your project',
+      message: 'Provide contribution guidelines on how other developers can contribute to your project.',
     },
     {
       type: 'input',
       name: 'test',
-      message: 'Provide test information for your project',
+      message: 'Provide test information on your project and any examples on how to run it.',
     },
-    // WHEN I choose a license for my application from a list of options
     {
-      type: 'checkbox',
+      type: 'list',
       name: 'license',
-      message: 'Is there a license with this project? (Check all that apply)',
+      message: 'Choose a license with this project',
       choices: ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD-2-Clause', 'BSD-3-Clause', 'IBM']
     },
   ])
 };
 
-const promptContact = readmeData => {
-  console.log(`
- =======================
- Add Contact Information
- =======================
-`)
-
-  // If there's no 'projects' array property, create one
-  if (!readmeData.contact) {
-    readmeData.contact = [];
-  }
-  return inquirer
-    .prompt([
-      // WHEN I enter my GitHub username
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Please provide your GitHub username (Required)',
-        validate: githubInput => {
-          if (githubInput) {
-            return true;
-          } else {
-            console.log('You need to enter your github username!');
-            return false;
-          }
-        }
-      },
-      // WHEN I enter my email address
-      {
-        type: 'input',
-        name: 'email',
-        message: 'Please provide your email address',
-      },
-    ]);
-};
-
-// TODO: Create a function to write README file
 const writeToFile = fileContent => {
   return new Promise((resolve, reject) => {
     fs.writeFile('./dist/README.md', fileContent, err => {
@@ -106,19 +94,15 @@ const writeToFile = fileContent => {
         reject(err);
         return;
       }
-
       resolve({
         ok: true,
-        message: 'File created!'
+        message: 'README.md file created!'
       })
     })
   })
 }
 
-// TODO: Create a function to initialize app
-// Function call to initialize app
-promptProject()
-  .then(promptContact)
+init()
   .then(readmeData => {
     return generateMarkdown(readmeData);
   })

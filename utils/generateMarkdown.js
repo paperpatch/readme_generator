@@ -3,8 +3,6 @@
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  console.log(license);
-  for (let i=0; i<license.length; i++) {
     switch (license) {
       case '':
         return '';
@@ -21,7 +19,6 @@ function renderLicenseBadge(license) {
       case 'IBM':
         return `[![License: IPL 1.0](https://img.shields.io/badge/License-IPL%201.0-blue.svg)](https://opensource.org/licenses/IPL-1.0)`
     };
-  };
 };
 
 // TODO: Create a function that returns the license section of README
@@ -97,4 +94,4 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = {generateMarkdown};
+module.exports = generateMarkdown;
