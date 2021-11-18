@@ -20,6 +20,10 @@ Requires Node.js and npm (Node Package Manager). Go to [Node's website](https://
 Run `npm install` in order to install the following npm package dependencies as specified in the `package.json`:
 - [inquirer.js](https://www.npmjs.com/package/inquirer) will prompt you for inputs from the command line.
 
+`npm init`
+
+`npm install inquirer`
+
 Start the application by running `node index.js` in the command line.
 
 ## Usage
