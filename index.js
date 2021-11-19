@@ -22,8 +22,8 @@ const init = () => {
       type: 'input',
       name: 'email',
       message: 'Please provide your email address (Required)',
-      validate: githubInput => {
-        if (githubInput) {
+      validate: emailInput => {
+        if (emailInput) {
           return true;
         } else {
           console.log('You need to enter your github username!');
